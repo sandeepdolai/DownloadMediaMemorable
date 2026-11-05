@@ -48,7 +48,7 @@ a { color: inherit; text-decoration: none; }
 }
 .title-line { display: flex; align-items: center; justify-content: center; white-space: nowrap; }
 .title-line-one { height: .86em; }
-.title-line-two { display: block; margin-top: .205em; line-height: .86; }
+.title-line-two { display: block; margin-top: .10em; line-height: .86; }
 .letter-group { display: inline-block; }
 .title-orb {
   display: block; flex: 0 0 auto; width: .86em; height: .86em;
