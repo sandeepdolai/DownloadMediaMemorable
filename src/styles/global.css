@@ -173,14 +173,14 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
 }
 .ribbon-segment > span { display: block; padding: 0 8px; }
-.ribbon-cyan { width: 20.5%; background: #22e8ed; }
-.ribbon-magenta { width: 25%; background: #ed2ce9; }
-.ribbon-indigo { width: 22%; background: #3554d5; }
-.ribbon-yellow { width: 32.5%; background: #efff27; }
+.ribbon-cyan { width: 26%; background: #0cf2ff; }
+.ribbon-magenta { width: 21%; background: #ff47e2; }
+.ribbon-indigo { width: 18%; background: #2b4eff; }
+.ribbon-yellow { width: 35%; background: #e2ff1a; }
 .ribbon-blue { background: #3458f4; }
-.ribbon-lower .ribbon-blue:first-child { width: 26%; }
-.ribbon-lower .ribbon-yellow { width: 47%; }
-.ribbon-lower .ribbon-blue:last-child { width: 27%; }
+.ribbon-lower .ribbon-blue:first-child { width: 30%; }
+.ribbon-lower .ribbon-yellow { width: 38.3%; }
+.ribbon-lower .ribbon-blue:last-child { width: 31.7%; }
 .showcase-art {
   position: absolute;
   display: block;
@@ -211,13 +211,13 @@ a { color: inherit; text-decoration: none; }
 .showcase-instagram {
   z-index: 3;
   top: 29px;
-  left: 24.1%;
+  left: 25.4%;
   width: clamp(78px, 9.5vw, 98px);
 }
 .showcase-tiktok {
   z-index: 5;
   top: 166px;
-  left: 27.1%;
+  left: 28.7%;
   width: clamp(82px, 10vw, 102px);
 }
 .showcase-pinterest {
