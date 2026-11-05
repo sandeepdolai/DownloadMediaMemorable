@@ -1,4 +1,4 @@
-name: Deploy MediaFetch to GitHub Pages
+name: Deploy MemorableDay.in to GitHub Pages
 
 on:
   push:
