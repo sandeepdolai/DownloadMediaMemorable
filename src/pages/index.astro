@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
 
-const assetBase = `${import.meta.env.BASE_URL.replace(/\\/$/, '')}/assets/`;
+const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL;
+const assetBase = `${basePath}/assets/`;
 const brandLogo = `${assetBase}logo_m.png`;
 const playOrb = `${assetBase}o_play.png`;
 const globeOrb = `${assetBase}o_globe.png`;
