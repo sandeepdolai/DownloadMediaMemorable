@@ -25,11 +25,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Prepare static site
+      - name: Prepare static site and extract original assets
         run: |
-          mkdir public
+          mkdir -p public/assets
           cp index.html styles.css script.js public/
-          cp -R assets public/assets
+          unzip -j memorableday_assets.zip \
+            'png_cutouts_transparent/logo_m.png' \
+            'png_cutouts_transparent/o_play.png' \
+            'png_cutouts_transparent/o_globe.png' \
+            -d public/assets/
+          test -s public/assets/logo_m.png
+          test -s public/assets/o_play.png
+          test -s public/assets/o_globe.png
+          ls -lh public/assets
           touch public/.nojekyll
 
       - name: Configure GitHub Pages
