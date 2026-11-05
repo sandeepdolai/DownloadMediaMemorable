@@ -1,0 +1,124 @@
+:root {
+  --font-display: 'Outfit', 'Poppins', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --brand-yellow: #e2ff1a;
+  color: #050505;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* { box-sizing: border-box; }
+html { min-width: 320px; background: #fff; }
+body { margin: 0; min-height: 100vh; overflow-x: hidden; background: #fff; color: #050505; font-family: var(--font-body); }
+a { color: inherit; text-decoration: none; }
+.site-header {
+  width: min(1420px, calc(100% - 10vw));
+  height: 70px; margin: 32px auto 0;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+}
+.brand {
+  display: inline-flex; align-items: center; justify-self: start; gap: 11px;
+  white-space: nowrap; font-family: var(--font-heading); font-size: 36px;
+  font-weight: 800; letter-spacing: -1.9px; line-height: 1;
+}
+.brand-mark { display: block; width: 56px; height: 56px; object-fit: contain; flex: 0 0 auto; }
+.main-nav {
+  display: flex; align-items: center; justify-content: center; gap: 49px;
+  white-space: nowrap; font-family: var(--font-body); font-size: 25px;
+  font-weight: 400; letter-spacing: -0.7px;
+}
+.main-nav a { transition: opacity 160ms ease; }
+.main-nav a:hover { opacity: .58; }
+.account-button {
+  justify-self: end; width: 241px; height: 69px; display: inline-flex;
+  align-items: center; justify-content: center; border-radius: 8px;
+  background: #050505; color: #fff; font-family: var(--font-body);
+  font-size: 25px; font-weight: 400; letter-spacing: -0.6px;
+  transition: background 160ms ease, transform 160ms ease;
+}
+.account-button:hover { background: #242424; transform: translateY(-1px); }
+.hero { width: min(1172px, calc(100% - 9vw)); margin: 85px auto 0; text-align: center; }
+.hero-title {
+  margin: 0; width: 100%; font-family: var(--font-display);
+  font-size: clamp(72px, 12.05vw, 190px); font-weight: 900;
+  letter-spacing: -0.057em; line-height: .865; color: #000;
+}
+.title-line { display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+.title-line-one { height: .86em; }
+.title-line-two { display: block; margin-top: .205em; line-height: .86; }
+.letter-group { display: inline-block; }
+.title-orb {
+  display: block; flex: 0 0 auto; width: .86em; height: .86em;
+  object-fit: contain; margin: 0 .012em; filter: drop-shadow(0 1px 1px rgba(0,0,0,.08));
+}
+.download-bar {
+  width: 100%; height: 107px; margin: 48px auto 0; padding: 9px 10px 9px 39px;
+  display: flex; align-items: center; gap: 16px; border: 2px solid #969696;
+  border-radius: 60px; background: linear-gradient(180deg, #f4f4f4 0%, #fbfbfb 100%);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.045), 0 1px 1px rgba(0,0,0,.04);
+}
+.download-bar input {
+  width: 100%; min-width: 0; height: 100%; padding: 0; border: 0; outline: 0;
+  background: transparent; color: #101010; font-family: var(--font-body);
+  font-size: 33px; font-weight: 400; letter-spacing: -1.35px;
+}
+.download-bar input::placeholder { color: #a5a5a5; opacity: 1; }
+.download-button {
+  flex: 0 0 322px; height: 82px; padding: 0 16px 0 31px;
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 12px;
+  border: 0; border-radius: 48px; background: var(--brand-yellow); color: #050505;
+  cursor: pointer; font-family: var(--font-body); font-size: 30px; font-weight: 500;
+  letter-spacing: -1.25px; white-space: nowrap; transition: filter 150ms ease, transform 150ms ease;
+}
+.download-button:hover { filter: brightness(.97); transform: scale(.99); }
+.button-play {
+  width: 47px; height: 47px; display: grid; place-items: center; flex: 0 0 auto;
+  border-radius: 50%; background: #050505; color: var(--brand-yellow);
+}
+.button-play svg { width: 29px; height: 29px; }
+.form-feedback { min-height: 20px; margin: 8px 0 0; color: #555; font-size: 13px; text-align: left; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+@media (max-width: 1180px) {
+  .site-header { width: calc(100% - 64px); grid-template-columns: auto 1fr auto; }
+  .brand { font-size: 30px; gap: 8px; }
+  .brand-mark { width: 48px; height: 48px; }
+  .main-nav { gap: clamp(16px, 3vw, 36px); font-size: 19px; }
+  .account-button { width: 190px; height: 58px; font-size: 20px; }
+  .hero { margin-top: 88px; width: min(1000px, calc(100% - 64px)); }
+  .hero-title { font-size: clamp(68px, 12vw, 145px); }
+  .download-bar { height: 88px; margin-top: 42px; padding-left: 28px; }
+  .download-bar input { font-size: 25px; }
+  .download-button { flex-basis: 270px; height: 68px; font-size: 25px; }
+  .button-play { width: 41px; height: 41px; }
+}
+@media (max-width: 760px) {
+  .site-header { width: calc(100% - 36px); height: 52px; margin-top: 18px; grid-template-columns: 1fr auto; }
+  .brand { font-size: 25px; letter-spacing: -1.2px; gap: 7px; }
+  .brand-mark { width: 42px; height: 42px; }
+  .main-nav { display: none; }
+  .account-button { width: 142px; height: 48px; border-radius: 7px; font-size: 16px; letter-spacing: -.3px; }
+  .hero { width: calc(100% - 28px); margin-top: clamp(76px, 16vh, 118px); }
+  .hero-title { font-size: clamp(47px, 12.7vw, 94px); letter-spacing: -.062em; }
+  .title-line-one { height: .9em; }
+  .title-orb { width: .84em; height: .84em; margin: 0 .007em; }
+  .title-line-two { margin-top: .23em; }
+  .download-bar { height: 64px; margin-top: 40px; padding: 5px 6px 5px 18px; gap: 7px; border-width: 1.5px; }
+  .download-bar input { font-size: clamp(13px, 3.8vw, 18px); letter-spacing: -.55px; }
+  .download-button { flex-basis: 143px; height: 50px; padding: 0 7px 0 13px; gap: 4px; font-size: clamp(13px, 3.5vw, 16px); letter-spacing: -.55px; }
+  .button-play { width: 34px; height: 34px; }
+  .button-play svg { width: 22px; height: 22px; }
+  .form-feedback { margin-top: 6px; }
+}
+@media (max-width: 370px) {
+  .brand { font-size: 22px; }
+  .account-button { width: 128px; font-size: 15px; }
+  .hero-title { font-size: 12.2vw; }
+  .download-bar { padding-left: 13px; }
+  .download-button { flex-basis: 132px; }
+}
