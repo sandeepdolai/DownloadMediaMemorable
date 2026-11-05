@@ -6,6 +6,12 @@ const assetBase = `${basePath}/assets/`;
 const brandLogo = `${assetBase}logo_m.png`;
 const playOrb = `${assetBase}o_play.png`;
 const globeOrb = `${assetBase}o_globe.png`;
+const heroSculpture = `${assetBase}hero_sculpture.png`;
+const youtubeIcon = `${assetBase}3d_youtube.png`;
+const instagramIcon = `${assetBase}3d_instagram.png`;
+const facebookIcon = `${assetBase}3d_facebook.png`;
+const tiktokIcon = `${assetBase}3d_tiktok.png`;
+const pinterestIcon = `${assetBase}3d_pinterest.png`;
 ---
 <!doctype html>
 <html lang="en">
@@ -75,6 +81,31 @@ const globeOrb = `${assetBase}o_globe.png`;
 
       <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
     </main>
+
+    <section class="feature-showcase" aria-label="4K video, MP3 audio, no watermark and instant save">
+      <div class="showcase-backdrop" aria-hidden="true"></div>
+
+      <div class="showcase-ribbons" aria-hidden="true">
+        <div class="showcase-ribbon ribbon-upper">
+          <span class="ribbon-segment ribbon-cyan"><span>4K VIDEO</span></span>
+          <span class="ribbon-segment ribbon-magenta"><span>MP3 AUDIO</span></span>
+          <span class="ribbon-segment ribbon-indigo"></span>
+          <span class="ribbon-segment ribbon-yellow"><span>NO WATERMARK</span></span>
+        </div>
+        <div class="showcase-ribbon ribbon-lower">
+          <span class="ribbon-segment ribbon-blue"></span>
+          <span class="ribbon-segment ribbon-yellow"></span>
+          <span class="ribbon-segment ribbon-blue"><span>INSTANT SAVE</span></span>
+        </div>
+      </div>
+
+      <img class="showcase-art showcase-youtube" src={youtubeIcon} alt="YouTube" loading="lazy" decoding="async" />
+      <img class="showcase-art showcase-facebook" src={facebookIcon} alt="Facebook" loading="lazy" decoding="async" />
+      <img class="showcase-art showcase-instagram" src={instagramIcon} alt="Instagram" loading="lazy" decoding="async" />
+      <img class="showcase-art showcase-tiktok" src={tiktokIcon} alt="TikTok" loading="lazy" decoding="async" />
+      <img class="showcase-art showcase-pinterest" src={pinterestIcon} alt="Pinterest" loading="lazy" decoding="async" />
+      <img class="showcase-art showcase-sculpture" src={heroSculpture} alt="Iridescent liquid sculpture" loading="lazy" decoding="async" />
+    </section>
 
     <script>
       import '../scripts/download.js';

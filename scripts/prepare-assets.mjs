@@ -8,6 +8,12 @@ const assets = [
   'logo_m.png',
   'o_play.png',
   'o_globe.png',
+  'hero_sculpture.png',
+  '3d_youtube.png',
+  '3d_instagram.png',
+  '3d_facebook.png',
+  '3d_tiktok.png',
+  '3d_pinterest.png',
 ];
 
 try {
