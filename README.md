@@ -1,6 +1,6 @@
 # MemorableDay.in
 
-Astro rebuild of the MemorableDay.in landing page.
+Astro rebuild of the MemorableDay.in media-downloader landing page, using the original visual assets supplied in `memorableday_assets.zip`.
 
 ## Requirements
 
@@ -14,8 +14,7 @@ npm install
 npm run dev
 ```
 
-The `predev` script extracts the three original transparent PNG assets from
-`memorableday_assets.zip` into `public/assets/` before Astro starts.
+The `predev` script extracts the original transparent PNG assets from the ZIP into `public/assets/`.
 
 ## Production build
 
@@ -24,12 +23,10 @@ npm run build
 npm run preview
 ```
 
-The `prebuild` script prepares the original logo, play orb, and globe orb.
-Astro writes the static site to `dist/`.
+The page is built as a static Astro site in `dist/`. The feature banner is composed from the original liquid sculpture and 3D social-platform PNG cutouts; the diagonal feature ribbons are styled in CSS.
 
 ## Deployment
 
-Every push to `main` builds the Astro site and deploys `dist/` to GitHub Pages.
-The project is configured for the repository URL:
+The `Deploy MemorableDay.in (Astro)` GitHub Actions workflow builds and deploys `dist/` to GitHub Pages whenever `main` changes.
 
-`https://sandeepdolai.github.io/Downloadmedia/`
+Live site: https://sandeepdolai.github.io/Downloadmedia/
