@@ -1,10 +1,10 @@
 ---
 import '../styles/global.css';
 
-const assetBase = import.meta.env.BASE_URL;
-const brandLogo = `${assetBase}assets/logo_m.png`;
-const playOrb = `${assetBase}assets/o_play.png`;
-const globeOrb = `${assetBase}assets/o_globe.png`;
+const assetBase = `${import.meta.env.BASE_URL.replace(/\\/$/, '')}/assets/`;
+const brandLogo = `${assetBase}logo_m.png`;
+const playOrb = `${assetBase}o_play.png`;
+const globeOrb = `${assetBase}o_globe.png`;
 ---
 <!doctype html>
 <html lang="en">
