@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import '../scripts/download.js';
 
 const assetBase = import.meta.env.BASE_URL;
 const brandLogo = `${assetBase}assets/logo_m.png`;
@@ -75,5 +74,9 @@ const globeOrb = `${assetBase}assets/o_globe.png`;
 
       <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
     </main>
+
+    <script>
+      import '../scripts/download.js';
+    </script>
   </body>
 </html>
