@@ -1,0 +1,17 @@
+{
+  "name": "memorableday-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/prepare-assets.mjs",
+    "dev": "astro dev",
+    "prebuild": "node scripts/prepare-assets.mjs",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "7.4.0",
+    "fflate": "0.8.2"
+  }
+}

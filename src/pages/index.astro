@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+import '../scripts/download.js';
+
+const assetBase = import.meta.env.BASE_URL;
+const brandLogo = `${assetBase}assets/logo_m.png`;
+const playOrb = `${assetBase}assets/o_play.png`;
+const globeOrb = `${assetBase}assets/o_globe.png`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="MemorableDay.in — download anything." />
+    <title>MemorableDay.in — Download Anything</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header" id="home">
+      <a class="brand" href="#home" aria-label="MemorableDay.in home">
+        <img class="brand-mark" src={brandLogo} alt="" />
+        <span>MemorableDay.in</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#supported-sites">Supported Sites</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="account-button" href="#create-account">Create Account</a>
+    </header>
+
+    <main class="hero" id="create-account">
+      <h1 class="hero-title" aria-label="Download Anything">
+        <span class="title-line title-line-one" aria-hidden="true">
+          <span class="letter-group">D</span>
+          <img class="title-orb play-orb" src={playOrb} alt="" />
+          <span class="letter-group">WNL</span>
+          <img class="title-orb globe-orb" src={globeOrb} alt="" />
+          <span class="letter-group">AD</span>
+        </span>
+        <span class="title-line title-line-two" aria-hidden="true">ANYTHING</span>
+      </h1>
+
+      <form class="download-bar" id="download-form" autocomplete="off">
+        <label class="visually-hidden" for="media-url">Media link</label>
+        <input
+          id="media-url"
+          name="url"
+          type="url"
+          placeholder="Paste your media link here..."
+          inputmode="url"
+        />
+        <button class="download-button" type="submit">
+          <span>Download Now</span>
+          <span class="button-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path
+                d="M8.4 5.9c-.55-.34-1.25.05-1.25.7v10.8c0 .65.7 1.04 1.25.7l8.7-5.4a.82.82 0 0 0 0-1.4l-8.7-5.4Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </button>
+      </form>
+
+      <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+    </main>
+  </body>
+</html>
