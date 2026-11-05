@@ -242,6 +242,8 @@ a { color: inherit; text-decoration: none; }
   .showcase-sculpture {
     top: -66px;
     width: min(66vw, 290px);
+    transform: translateX(calc(-50% - 2vw)) scale(1.09, 1.02);
+    transform-origin: center bottom;
   }
   .showcase-youtube {
     top: -52px;
