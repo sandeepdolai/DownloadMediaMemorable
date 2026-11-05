@@ -63,6 +63,17 @@ with ZipFile(ARCHIVE) as zf:
 
         sheet.save(OUTPUT / f"{group_name}.jpg", quality=92)
 
+    # Export original transparent artwork and the full-resolution section mockup
+    export_dir = OUTPUT / "source-materials"
+    export_dir.mkdir(exist_ok=True)
+    selected = image_groups["transparent_png"] + [
+        "high_res_original_renders/website_ui_mockup_bottom_section.jpg",
+        "high_res_original_renders/website_ui_mockup_full_page.jpg",
+    ]
+    for name in selected:
+        target = export_dir / Path(name).name
+        target.write_bytes(zf.read(name))
+
     (OUTPUT / "inventory.txt").write_text(
         "\\n".join([f"{x['path']} ({x['size_bytes']} bytes)" for x in entries]),
         encoding="utf-8",
