@@ -18,173 +18,96 @@ const pinterestIcon = `${assetBase}3d_pinterest.png`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f1a63f" />
-    <meta name="description" content="MediaFetch — download anything." />
-    <title>MediaFetch — Download Anything</title>
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="MemorableDay.in — download anything." />
+    <title>MemorableDay.in — Download Anything</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="site-header" id="home">
-        <a class="brand" href="#home" aria-label="MediaFetch home">
-          <img class="brand-mark" src={brandLogo} alt="" />
-          <span>MediaFetch</span>
-        </a>
+    <header class="site-header" id="home">
+      <a class="brand" href="#home" aria-label="MemorableDay.in home">
+        <img class="brand-mark" src={brandLogo} alt="" />
+        <span>MemorableDay.in</span>
+      </a>
 
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="#home">Home</a>
-          <a href="#supported-sites">Supported Sites</a>
-          <a href="#features">Features</a>
-          <a href="#faq">FAQ</a>
-        </nav>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#supported-sites">Supported Sites</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+      </nav>
 
-        <a class="account-button" href="#extension">Get Extension</a>
-      </header>
+      <a class="account-button" href="#create-account">Create Account</a>
+    </header>
 
-      <main class="hero" id="download">
-        <h1 class="hero-title" aria-label="Download Anything">
-          <span class="title-line title-line-one" aria-hidden="true">
-            <span class="letter-group">D</span>
-            <img class="title-orb play-orb" src={playOrb} alt="" />
-            <span class="letter-group">WNL</span>
-            <img class="title-orb globe-orb" src={globeOrb} alt="" />
-            <span class="letter-group">AD</span>
+    <main class="hero" id="create-account">
+      <h1 class="hero-title" aria-label="Download Anything">
+        <span class="title-line title-line-one" aria-hidden="true">
+          <span class="letter-group">D</span>
+          <img class="title-orb play-orb" src={playOrb} alt="" />
+          <span class="letter-group">WNL</span>
+          <img class="title-orb globe-orb" src={globeOrb} alt="" />
+          <span class="letter-group">AD</span>
+        </span>
+        <span class="title-line title-line-two" aria-hidden="true">ANYTHING</span>
+      </h1>
+
+      <form class="download-bar" id="download-form" autocomplete="off">
+        <label class="visually-hidden" for="media-url">Media link</label>
+        <input
+          id="media-url"
+          name="url"
+          type="url"
+          placeholder="Paste your media link here..."
+          inputmode="url"
+        />
+        <button class="download-button" type="submit">
+          <span>Download Now</span>
+          <span class="button-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path
+                d="M8.4 5.9c-.55-.34-1.25.05-1.25.7v10.8c0 .65.7 1.04 1.25.7l8.7-5.4a.82.82 0 0 0 0-1.4l-8.7-5.4Z"
+                fill="currentColor"
+              />
+            </svg>
           </span>
-          <span class="title-line title-line-two" aria-hidden="true">ANYTHING</span>
-        </h1>
+        </button>
+      </form>
 
-        <form class="download-bar" id="download-form" autocomplete="off">
-          <label class="visually-hidden" for="media-url">Media link</label>
-          <input
-            id="media-url"
-            name="url"
-            type="url"
-            placeholder="Paste your media link here..."
-            inputmode="url"
-          />
-          <button class="download-button" type="submit">
-            <span>Download Now</span>
-            <span class="button-play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path
-                  d="M8.4 5.9c-.55-.34-1.25.05-1.25.7v10.8c0 .65.7 1.04 1.25.7l8.7-5.4a.82.82 0 0 0 0-1.4l-8.7-5.4Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-          </button>
-        </form>
-        <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
-      </main>
+      <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+    </main>
 
-      <section class="feature-showcase" aria-label="4K video, MP3 audio, no watermark and instant save">
-        <div class="showcase-backdrop" aria-hidden="true"></div>
+    <section class="feature-showcase" aria-label="4K video, MP3 audio, no watermark and instant save">
+      <div class="showcase-backdrop" aria-hidden="true"></div>
 
-        <div class="showcase-ribbons" aria-hidden="true">
-          <div class="showcase-ribbon ribbon-upper">
-            <span class="ribbon-segment ribbon-cyan"><span>4K VIDEO</span></span>
-            <span class="ribbon-segment ribbon-magenta"><span>MP3 AUDIO</span></span>
-            <span class="ribbon-segment ribbon-indigo"></span>
-            <span class="ribbon-segment ribbon-yellow"><span>NO WATERMARK</span></span>
-          </div>
-          <div class="showcase-ribbon ribbon-lower">
-            <span class="ribbon-segment ribbon-blue"></span>
-            <span class="ribbon-segment ribbon-yellow"></span>
-            <span class="ribbon-segment ribbon-blue"><span>INSTANT SAVE</span></span>
-          </div>
+      <div class="showcase-ribbons" aria-hidden="true">
+        <div class="showcase-ribbon ribbon-upper">
+          <span class="ribbon-segment ribbon-cyan"><span>4K VIDEO</span></span>
+          <span class="ribbon-segment ribbon-magenta"><span>MP3 AUDIO</span></span>
+          <span class="ribbon-segment ribbon-indigo"></span>
+          <span class="ribbon-segment ribbon-yellow"><span>NO WATERMARK</span></span>
         </div>
-
-        <div class="showcase-composition" aria-hidden="true">
-          <img class="composition-art composition-sculpture" src={heroSculpture} alt="" decoding="async" />
-          <img class="composition-art composition-youtube" src={youtubeIcon} alt="" decoding="async" />
-          <img class="composition-art composition-facebook" src={facebookIcon} alt="" decoding="async" />
-          <img class="composition-art composition-instagram" src={instagramIcon} alt="" decoding="async" />
-          <img class="composition-art composition-tiktok" src={tiktokIcon} alt="" decoding="async" />
-          <img class="composition-art composition-pinterest" src={pinterestIcon} alt="" decoding="async" />
+        <div class="showcase-ribbon ribbon-lower">
+          <span class="ribbon-segment ribbon-blue"></span>
+          <span class="ribbon-segment ribbon-yellow"></span>
+          <span class="ribbon-segment ribbon-blue"><span>INSTANT SAVE</span></span>
         </div>
-      </section>
+      </div>
 
-      <section class="proof-section" id="supported-sites">
-        <div class="platforms-block">
-          <h2>Supported Platforms:</h2>
-          <ul class="platform-list">
-            <li><img src={youtubeIcon} alt="" /><span>YouTube</span></li>
-            <li><img src={instagramIcon} alt="" /><span>Instagram</span></li>
-            <li><img src={tiktokIcon} alt="" /><span>TikTok</span></li>
-            <li><img src={facebookIcon} alt="" /><span>Facebook</span></li>
-            <li><img src={pinterestIcon} alt="" /><span>Pinterest</span></li>
-          </ul>
-        </div>
-
-        <div class="trust-block">
-          <div class="stats-row">
-            <div class="stat"><strong>10M+</strong><span>Downloads</span></div>
-            <div class="stat"><strong>99.9%</strong><span>Success</span></div>
-            <div class="stat"><strong>500K+</strong><span>Daily Users</span></div>
-          </div>
-          <div class="trust-row">
-            <div class="avatar-stack" aria-hidden="true">
-              <span class="avatar avatar-one">M</span>
-              <span class="avatar avatar-two">A</span>
-              <span class="avatar avatar-three">D</span>
-            </div>
-            <div class="trust-copy">
-              <h3>Trusted by millions worldwide</h3>
-              <p>Fast, free, and secure media downloads</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="features-section" id="features">
-        <h2>UNLIMITED<br />DOWNLOADS FOR ALL</h2>
-        <div class="feature-cards">
-          <article class="feature-card feature-card-dark">
-            <div class="feature-visual visual-orbs" aria-hidden="true">
-              <img src={playOrb} alt="" />
-              <img src={globeOrb} alt="" />
-            </div>
-            <div class="feature-card-copy">
-              <h3>Your media, in one place</h3>
-              <p>A simple place to start with the links you want to save.</p>
-            </div>
-          </article>
-          <article class="feature-card feature-card-light">
-            <div class="feature-visual visual-device" aria-hidden="true">
-              <div class="device-frame"><span></span><i></i><b></b></div>
-            </div>
-            <div class="feature-card-copy">
-              <h3>Made to feel effortless</h3>
-              <p>A clean experience from the first link to the final step.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="faq-section" id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <details>
-          <summary>How do I use MediaFetch?</summary>
-          <p>Paste a media link into the field above to begin.</p>
-        </details>
-        <details>
-          <summary>Which platforms are shown as supported?</summary>
-          <p>YouTube, Instagram, TikTok, Facebook and Pinterest are shown in the supported-platform list.</p>
-        </details>
-      </section>
-
-      <div id="extension" class="extension-anchor" aria-hidden="true"></div>
-
-      <footer class="site-footer">
-        <a class="footer-brand" href="#home">MediaFetch</a>
-        <span>Download Anything</span>
-      </footer>
-    </div>
+      <div class="showcase-composition" aria-hidden="true">
+        <img class="composition-art composition-sculpture" src={heroSculpture} alt="" decoding="async" />
+        <img class="composition-art composition-youtube" src={youtubeIcon} alt="" decoding="async" />
+        <img class="composition-art composition-facebook" src={facebookIcon} alt="" decoding="async" />
+        <img class="composition-art composition-instagram" src={instagramIcon} alt="" decoding="async" />
+        <img class="composition-art composition-tiktok" src={tiktokIcon} alt="" decoding="async" />
+        <img class="composition-art composition-pinterest" src={pinterestIcon} alt="" decoding="async" />
+      </div>
+    </section>
 
     <script>
       import '../scripts/download.js';
