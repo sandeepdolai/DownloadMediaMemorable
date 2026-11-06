@@ -181,7 +181,18 @@ a { color: inherit; text-decoration: none; }
 .ribbon-lower .ribbon-blue:first-child { width: 30%; }
 .ribbon-lower .ribbon-yellow { width: 38.3%; }
 .ribbon-lower .ribbon-blue:last-child { width: 31.7%; }
-.showcase-art {
+/* Artwork aligned to the exact transparent-canvas proportions supplied by the user. */
+.showcase-composition {
+  position: absolute;
+  z-index: 4;
+  top: clamp(-100px, -9.5vw, -62px);
+  left: 50%;
+  width: min(65vw, 700px);
+  aspect-ratio: 2048 / 1529;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.composition-art {
   position: absolute;
   display: block;
   height: auto;
@@ -189,42 +200,41 @@ a { color: inherit; text-decoration: none; }
   user-select: none;
   pointer-events: none;
 }
-.showcase-sculpture {
+.composition-sculpture {
   z-index: 4;
-  top: -91px;
-  left: 50%;
-  width: clamp(300px, 37vw, 380px);
-  transform: translateX(-50%);
+  left: 20.5%;
+  top: 0.6%;
+  width: 60%;
 }
-.showcase-youtube {
-  z-index: 3;
-  top: -75px;
-  left: 32.5%;
-  width: clamp(68px, 8.5vw, 86px);
-}
-.showcase-facebook {
-  z-index: 3;
-  top: -74px;
-  left: 61.2%;
-  width: clamp(78px, 9.6vw, 98px);
-}
-.showcase-instagram {
-  z-index: 3;
-  top: 29px;
-  left: 25.4%;
-  width: clamp(78px, 9.5vw, 98px);
-}
-.showcase-tiktok {
+.composition-youtube {
   z-index: 5;
-  top: 166px;
-  left: 28.7%;
-  width: clamp(82px, 10vw, 102px);
+  left: 27.1%;
+  top: 4.8%;
+  width: 12.2%;
 }
-.showcase-pinterest {
+.composition-facebook {
   z-index: 5;
-  top: 145px;
-  left: 61.3%;
-  width: clamp(76px, 9.2vw, 94px);
+  left: 69.1%;
+  top: 5%;
+  width: 14.7%;
+}
+.composition-instagram {
+  z-index: 5;
+  left: 14.9%;
+  top: 26.7%;
+  width: 14.7%;
+}
+.composition-tiktok {
+  z-index: 6;
+  left: 20.2%;
+  top: 55.3%;
+  width: 14.6%;
+}
+.composition-pinterest {
+  z-index: 5;
+  left: 69.1%;
+  top: 50.9%;
+  width: 15%;
 }
 
 @media (max-width: 760px) {
@@ -239,35 +249,9 @@ a { color: inherit; text-decoration: none; }
   }
   .ribbon-upper { top: 73px; }
   .ribbon-lower { top: 151px; }
-  .showcase-sculpture {
-    top: -66px;
-    width: min(66vw, 290px);
-    transform: translateX(calc(-50% - 2vw)) scale(1.09, 1.02);
-    transform-origin: center bottom;
-  }
-  .showcase-youtube {
-    top: -52px;
-    left: 31%;
-    width: clamp(52px, 15vw, 62px);
-  }
-  .showcase-facebook {
-    top: -52px;
-    left: 65%;
-    width: clamp(58px, 16vw, 66px);
-  }
-  .showcase-instagram {
-    top: 24px;
-    left: 20%;
-    width: clamp(58px, 16vw, 66px);
-  }
-  .showcase-tiktok {
-    top: 127px;
-    left: 25%;
-    width: clamp(62px, 17vw, 70px);
-  }
-  .showcase-pinterest {
-    top: 111px;
-    left: 65%;
-    width: clamp(58px, 16vw, 66px);
+  .showcase-composition {
+    top: -9.5vw;
+    width: 65vw;
+    max-width: 520px;
   }
 }
