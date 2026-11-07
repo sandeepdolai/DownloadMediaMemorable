@@ -4,8 +4,8 @@ import '../styles/global.css';
 const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL;
 const assetBase = `${basePath}/assets/`;
 const brandLogo = `${assetBase}logo_m.png`;
-const playOrb = `${assetBase}o_play.png`;
-const globeOrb = `${assetBase}o_globe.png`;
+const titleImage = `${assetBase}title-download-anything.png`;
+const titleImageHigh = `${assetBase}title-download-anything-high.png`;
 const showcaseImage = `${assetBase}showcase-composition.png`;
 ---
 <!doctype html>
@@ -41,15 +41,15 @@ const showcaseImage = `${assetBase}showcase-composition.png`;
     </header>
 
     <main class="hero" id="create-account">
-      <h1 class="hero-title" aria-label="Download Anything">
-        <span class="title-line title-line-one" aria-hidden="true">
-          <span class="letter-group">D</span>
-          <img class="title-orb play-orb" src={playOrb} alt="" />
-          <span class="letter-group">WNL</span>
-          <img class="title-orb globe-orb" src={globeOrb} alt="" />
-          <span class="letter-group">AD</span>
-        </span>
-        <span class="title-line title-line-two" aria-hidden="true">ANYTHING</span>
+      <h1 class="hero-title">
+        <img
+          class="hero-title-image"
+          src={titleImage}
+          srcset={`${titleImage} 1x, ${titleImageHigh} 2x`}
+          alt="Download Anything"
+          decoding="async"
+          fetchpriority="high"
+        />
       </h1>
 
       <form class="download-bar" id="download-form" autocomplete="off">

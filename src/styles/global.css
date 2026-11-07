@@ -41,18 +41,14 @@ a { color: inherit; text-decoration: none; }
 }
 .account-button:hover { background: #242424; transform: translateY(-1px); }
 .hero { width: min(1172px, calc(100% - 9vw)); margin: 85px auto 0; text-align: center; }
-.hero-title {
-  margin: 0; width: 100%; font-family: var(--font-display);
-  font-size: clamp(72px, 12.05vw, 190px); font-weight: 900;
-  letter-spacing: -0.057em; line-height: .865; color: #000;
-}
-.title-line { display: flex; align-items: center; justify-content: center; white-space: nowrap; }
-.title-line-one { height: .86em; }
-.title-line-two { display: block; margin-top: .10em; line-height: .86; }
-.letter-group { display: inline-block; }
-.title-orb {
-  display: block; flex: 0 0 auto; width: .86em; height: .86em;
-  object-fit: contain; margin: 0 .012em; filter: drop-shadow(0 1px 1px rgba(0,0,0,.08));
+.hero-title { margin: 0; width: 100%; }
+.hero-title-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  user-select: none;
 }
 .download-bar {
   width: 100%; height: 107px; margin: 48px auto 0; padding: 9px 10px 9px 39px;
@@ -104,10 +100,6 @@ a { color: inherit; text-decoration: none; }
   .main-nav { display: none; }
   .account-button { width: 142px; height: 48px; border-radius: 7px; font-size: 16px; letter-spacing: -.3px; }
   .hero { width: calc(100% - 28px); margin-top: clamp(76px, 16vh, 118px); }
-  .hero-title { font-size: clamp(47px, 12.7vw, 94px); letter-spacing: -.062em; }
-  .title-line-one { height: .9em; }
-  .title-orb { width: .84em; height: .84em; margin: 0 .007em; }
-  .title-line-two { margin-top: .23em; }
   .download-bar { height: 64px; margin-top: 40px; padding: 5px 6px 5px 18px; gap: 7px; border-width: 1.5px; }
   .download-bar input { font-size: clamp(13px, 3.8vw, 18px); letter-spacing: -.55px; }
   .download-button { flex-basis: 143px; height: 50px; padding: 0 7px 0 13px; gap: 4px; font-size: clamp(13px, 3.5vw, 16px); letter-spacing: -.55px; }
@@ -119,7 +111,6 @@ a { color: inherit; text-decoration: none; }
   .brand { font-size: 15px; }
   .brand-mark { width: 30px; height: 30px; }
   .account-button { width: 128px; font-size: 15px; }
-  .hero-title { font-size: 12.2vw; }
   .download-bar { padding-left: 13px; }
   .download-button { flex-basis: 132px; }
 }
