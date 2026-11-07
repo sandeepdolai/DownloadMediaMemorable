@@ -14,11 +14,18 @@ const assets = [
   '3d_facebook.png',
   '3d_tiktok.png',
   '3d_pinterest.png',
+  'flat_youtube.png',
+  'flat_instagram.png',
+  'flat_tiktok.png',
+  'flat_facebook.png',
+  'flat_pinterest.png',
+  'avatars_trio.png',
 ];
 
 try {
   const archive = new Uint8Array(await readFile(archivePath));
   const extracted = unzipSync(archive);
+  console.log('FONT_GUIDE_START\\n' + new TextDecoder().decode(extracted['FONTS.md']) + '\\nFONT_GUIDE_END');
   await mkdir(outputDirectory, { recursive: true });
 
   for (const filename of assets) {
