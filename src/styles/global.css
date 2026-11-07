@@ -120,6 +120,10 @@ a { color: inherit; text-decoration: none; }
   .button-play { width: 41px; height: 41px; }
 }
 @media (max-width: 760px) {
+  .hero-title { font-size: clamp(47px, 12.7vw, 94px); letter-spacing: -.062em; }
+  .title-line-one { height: .9em; column-gap: .055em; }
+  .title-orb { width: .84em; height: .84em; }
+  .title-line-two { margin-top: .23em; }
   .site-header { width: calc(100% - 36px); height: 52px; margin-top: 18px; grid-template-columns: 1fr auto; }
   .brand { font-size: 17px; letter-spacing: -.8px; gap: 7px; }
   .brand-mark { width: 34px; height: 34px; }
@@ -134,6 +138,8 @@ a { color: inherit; text-decoration: none; }
   .form-feedback { margin-top: 6px; }
 }
 @media (max-width: 370px) {
+  .hero-title { font-size: 12.2vw; }
+  .title-line-one { column-gap: .05em; }
   .brand { font-size: 15px; }
   .brand-mark { width: 30px; height: 30px; }
   .account-button { width: 128px; font-size: 15px; }
