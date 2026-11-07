@@ -39,6 +39,13 @@ try {
     await writeFile(resolve(outputDirectory, filename), fileContents);
     console.log(`Prepared public/assets/${filename}`);
   }
+
+  const studioMaster = extracted['high_res_original_renders/studio_3d_card_full_assembly.jpg'];
+  if (!studioMaster || studioMaster.byteLength === 0) {
+    throw new Error('Missing high-resolution Studio card master render.');
+  }
+  await writeFile(resolve(outputDirectory, 'studio_card_full_master.jpg'), studioMaster);
+  console.log('Prepared public/assets/studio_card_full_master.jpg');
 } catch (error) {
   console.error('Unable to prepare the original MemorableDay assets.');
   console.error(error);
