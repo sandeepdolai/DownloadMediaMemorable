@@ -20,6 +20,7 @@ const assets = [
   'flat_facebook.png',
   'flat_pinterest.png',
   'avatars_trio.png',
+  'studio_card_full.png',
 ];
 
 try {
