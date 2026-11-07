@@ -4,7 +4,6 @@ import '../styles/global.css';
 const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL;
 const assetBase = `${basePath}/assets/`;
 const brandLogo = `${assetBase}brand-mark-high.png`;
-const avatarsImage = `${assetBase}avatars-trio-chat-upload.webp`;
 const playOrb = `${assetBase}o_play.png`;
 const globeOrb = `${assetBase}o_globe.png`;
 const showcaseImage = `${assetBase}showcase-composition.png`;
@@ -107,7 +106,7 @@ const studioCardImage = `${assetBase}studio_card_full_master.jpg`;
         </div>
         <div class="platform-proof">
           <div class="avatars-trio-frame">
-            <img class="avatars-trio" src={avatarsImage} alt="People in the MemorableDay community" loading="lazy" decoding="async" />
+            <img class="avatars-trio" src={`${assetBase}avatars_trio.png`} alt="People in the MemorableDay community" loading="lazy" decoding="async" />
           </div>
           <div class="platform-proof-copy">
             <h3>Trusted by millions<br />worldwide</h3>
