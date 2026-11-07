@@ -8,7 +8,7 @@ const resultMeta = document.querySelector('#download-result-meta');
 const formatSelect = document.querySelector('#download-format');
 const selectedDownloadButton = document.querySelector('#download-selected');
 
-const apiBase = (downloadForm?.dataset.apiBase || '').replace(/\\/+$/, '');
+const apiBase = (downloadForm?.dataset.apiBase || '').replace(/\/+$/, '');
 let inspectedMedia = null;
 
 function showFeedback(message, isError = false) {
