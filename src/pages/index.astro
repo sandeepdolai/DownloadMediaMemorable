@@ -97,35 +97,14 @@ const showcaseImage = `${assetBase}showcase-composition.png`;
           <div class="platform-stat"><strong>500K+</strong><span>Daily Users</span></div>
         </div>
         <div class="platform-list" aria-label="Supported platforms">
-          <div class="platform-item">
-            <svg class="platform-icon youtube-icon" viewBox="0 0 96 72" role="img" aria-label="YouTube"><rect x="2" y="2" width="92" height="68" rx="17" fill="#F20D16"/><path d="M39 20.5c-1.4-.9-3.2.1-3.2 1.8v27.4c0 1.7 1.8 2.7 3.2 1.8l22.5-13.7a2.1 2.1 0 0 0 0-3.6L39 20.5Z" fill="#fff"/></svg>
-            <span>YouTube</span>
-          </div>
-          <div class="platform-item">
-            <svg class="platform-icon" viewBox="0 0 88 88" role="img" aria-label="Instagram">
-              <defs><linearGradient id="ig-grad" x1="8%" y1="100%" x2="92%" y2="0%"><stop stop-color="#FFD15C"/><stop offset=".35" stop-color="#F33D73"/><stop offset=".68" stop-color="#C42BBE"/><stop offset="1" stop-color="#5B54D9"/></linearGradient></defs>
-              <rect x="2" y="2" width="84" height="84" rx="20" fill="url(#ig-grad)"/><rect x="18" y="18" width="52" height="52" rx="15" fill="none" stroke="#fff" stroke-width="6"/><circle cx="44" cy="44" r="13" fill="none" stroke="#fff" stroke-width="6"/><circle cx="63" cy="25" r="4" fill="#fff"/>
-            </svg><span>Instagram</span>
-          </div>
-          <div class="platform-item">
-            <svg class="platform-icon" viewBox="0 0 88 88" role="img" aria-label="TikTok"><rect x="2" y="2" width="84" height="84" rx="19" fill="#050505"/><path d="M52 15v34a14 14 0 1 1-12-14v11a4 4 0 1 0 2 3V15h10Zm0 0c2 8 7 13 15 14v10c-6 0-11-2-15-6V15Z" fill="#25F4EE" transform="translate(-3 2)"/><path d="M54 15v34a14 14 0 1 1-12-14v11a4 4 0 1 0 2 3V15h10Zm0 0c2 8 7 13 15 14v10c-6 0-11-2-15-6V15Z" fill="#FE2C55" transform="translate(2 1)"/><path d="M53 15v34a14 14 0 1 1-12-14v11a4 4 0 1 0 2 3V15h10Zm0 0c2 8 7 13 15 14v10c-6 0-11-2-15-6V15Z" fill="#fff"/></svg>
-            <span>TikTok</span>
-          </div>
-          <div class="platform-item">
-            <svg class="platform-icon" viewBox="0 0 88 88" role="img" aria-label="Facebook"><rect x="2" y="2" width="84" height="84" rx="17" fill="#1877E9"/><path d="M51.5 83V49.1h11.4l1.7-13.2H51.5v-8.4c0-3.8 1.1-6.4 6.6-6.4h7V9.3c-1.2-.2-5.5-.5-10.4-.5-10.3 0-17.4 6.3-17.4 17.9v9.2H26v13.2h11.3V83h14.2Z" fill="#fff"/></svg>
-            <span>Facebook</span>
-          </div>
-          <div class="platform-item">
-            <svg class="platform-icon" viewBox="0 0 88 88" role="img" aria-label="Pinterest"><circle cx="44" cy="44" r="42" fill="#D20D2C"/><text x="44" y="67" fill="#fff" font-size="67" font-weight="700" text-anchor="middle" font-family="Georgia,serif">P</text></svg>
-            <span>Pinterest</span>
-          </div>
+          <div class="platform-item"><img class="platform-icon youtube-icon" src={`${assetBase}flat_youtube.png`} alt="" /><span>YouTube</span></div>
+          <div class="platform-item"><img class="platform-icon" src={`${assetBase}flat_instagram.png`} alt="" /><span>Instagram</span></div>
+          <div class="platform-item"><img class="platform-icon" src={`${assetBase}flat_tiktok.png`} alt="" /><span>TikTok</span></div>
+          <div class="platform-item"><img class="platform-icon" src={`${assetBase}flat_facebook.png`} alt="" /><span>Facebook</span></div>
+          <div class="platform-item"><img class="platform-icon" src={`${assetBase}flat_pinterest.png`} alt="" /><span>Pinterest</span></div>
         </div>
         <div class="platform-proof">
-          <div class="avatar-stack" aria-label="Community members">
-            <svg class="trust-avatar" viewBox="0 0 112 112" role="img" aria-label="Community member"><defs><clipPath id="av1"><circle cx="56" cy="56" r="54"/></clipPath></defs><g clip-path="url(#av1)"><rect width="112" height="112" fill="#65CBE0"/><path d="M13 113c3-25 17-37 43-37s40 12 43 37" fill="#e9f2f5"/><path d="M35 43c0-19 9-29 22-29 17 0 25 12 23 31l-5 19H39" fill="#30251f"/><ellipse cx="56" cy="49" rx="20" ry="25" fill="#e7b18f"/><path d="M36 44c1-20 13-30 25-28 9 1 17 9 19 20-7-7-14-10-23-9-8 1-13 5-21 17" fill="#29201d"/><path d="M50 51h2m12 0h2" stroke="#39231d" stroke-width="2.4" stroke-linecap="round"/><path d="M51 63c3 3 8 3 11 0" fill="none" stroke="#9a5145" stroke-width="2"/><path d="M47 75h18l10 38H37Z" fill="#f7f7f5"/></g></svg>
-            <svg class="trust-avatar" viewBox="0 0 112 112" role="img" aria-label="Community member"><defs><clipPath id="av2"><circle cx="56" cy="56" r="54"/></clipPath></defs><g clip-path="url(#av2)"><rect width="112" height="112" fill="#f4b5b5"/><path d="M9 113c4-27 20-38 47-38s43 11 47 38" fill="#e9f0f6"/><path d="M29 54c-3-24 8-39 27-39 22 0 31 18 26 43l-5 29H34" fill="#79553d"/><ellipse cx="56" cy="50" rx="20" ry="25" fill="#f0c5a7"/><path d="M35 43c1-21 13-30 26-29 12 0 20 9 23 24-11-6-19-12-30-8-8 3-12 8-19 13" fill="#805538"/><path d="M49 51h2m12 0h2" stroke="#51372f" stroke-width="2.2" stroke-linecap="round"/><path d="M50 63c4 4 9 4 13 0" fill="none" stroke="#b96d69" stroke-width="2"/><path d="M48 75h17l11 38H36Z" fill="#f8f8f8"/></g></svg>
-            <svg class="trust-avatar" viewBox="0 0 112 112" role="img" aria-label="Community member"><defs><clipPath id="av3"><circle cx="56" cy="56" r="54"/></clipPath></defs><g clip-path="url(#av3)"><rect width="112" height="112" fill="#a9c5ca"/><path d="M8 113c4-27 20-38 48-38s44 11 48 38" fill="#c86d42"/><path d="M34 43c0-18 10-28 23-28 17 0 26 12 23 32l-5 23H39" fill="#60412c"/><ellipse cx="56" cy="49" rx="20" ry="25" fill="#d9a27f"/><path d="M36 42c2-19 13-28 26-28 10 1 17 8 20 21-9-6-17-9-26-7-8 2-14 7-20 14" fill="#543725"/><path d="M49 52h2m12 0h2" stroke="#3b2922" stroke-width="2.2" stroke-linecap="round"/><path d="M40 58c2 13 7 21 16 22 9-1 14-9 16-22l-4 1c-2 6-7 9-12 9s-10-3-12-9" fill="#75452e"/><path d="M48 76h17l12 37H35Z" fill="#f0f0ef"/></g></svg>
-          </div>
+          <img class="avatars-trio" src={`${assetBase}avatars_trio.png`} alt="People in the MemorableDay community" loading="lazy" decoding="async" />
           <div class="platform-proof-copy">
             <h3>Trusted by millions<br />worldwide</h3>
             <p>Fast, free, and secure media<br class="desktop-break" /> downloads</p>

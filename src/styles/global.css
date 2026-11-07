@@ -199,12 +199,10 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-body); font-size: clamp(15px,1.3vw,21px);
   font-weight: 400; letter-spacing: -.35px; white-space: nowrap;
 }
-.platform-icon { display: block; width: clamp(54px,5.45vw,90px); height: clamp(54px,5.45vw,90px); overflow: visible; }
+.platform-icon { display: block; width: clamp(54px,5.45vw,90px); height: clamp(54px,5.45vw,90px); object-fit: contain; overflow: visible; }
 .youtube-icon { height: clamp(48px,4.95vw,82px); margin: 3px 0 7px; }
 .platform-proof { display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 34px; }
-.avatar-stack { flex: 0 0 auto; display: flex; align-items: center; padding-left: 2px; }
-.trust-avatar { display: block; width: clamp(68px,6vw,100px); height: clamp(68px,6vw,100px); border-radius: 50%; margin-left: -12px; }
-.trust-avatar:first-child { margin-left: 0; }
+.avatars-trio { display: block; flex: 0 0 auto; width: clamp(190px,14vw,238px); height: auto; object-fit: contain; }
 .platform-proof-copy { flex: 1 1 auto; min-width: 0; max-width: 360px; }
 .platform-proof-copy h3 {
   margin: 0; font-family: var(--font-heading); font-size: clamp(23px,2.35vw,39px);
@@ -217,7 +215,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width:1050px) {
   .platform-trust-inner { width: calc(100% - 72px); column-gap: 34px; }
   .platform-proof { gap: 22px; }
-  .trust-avatar { width: 68px; height: 68px; margin-left: -17px; }
+  .avatars-trio { width: clamp(160px,22vw,205px); }
   .platform-proof-copy h3 { font-size: 26px; }
   .platform-proof-copy p { margin-top: 16px; font-size: 17px; }
 }
@@ -233,8 +231,7 @@ a { color: inherit; text-decoration: none; }
   .platform-icon { width: clamp(44px,12vw,66px); height: clamp(44px,12vw,66px); }
   .youtube-icon { width: clamp(48px,13vw,70px); height: clamp(39px,10.5vw,58px); margin: 4px 0 7px; }
   .platform-proof { justify-content: flex-start; gap: 18px; }
-  .trust-avatar { width: clamp(48px,13vw,64px); height: clamp(48px,13vw,64px); margin-left: -15px; }
-  .trust-avatar:first-child { margin-left: 0; }
+  .avatars-trio { width: clamp(120px,34vw,180px); }
   .platform-proof-copy h3 { font-size: clamp(19px,5vw,26px); letter-spacing: -.7px; }
   .platform-proof-copy p { margin-top: 10px; font-size: clamp(14px,3.7vw,17px); }
   .desktop-break { display: none; }
