@@ -34,6 +34,8 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Build Astro site
+        env:
+          PUBLIC_DOWNLOADER_API_URL: ${{ vars.PUBLIC_DOWNLOADER_API_URL }}
         run: npm run build
 
       - name: Configure GitHub Pages

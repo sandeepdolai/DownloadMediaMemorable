@@ -563,3 +563,61 @@ a { color: inherit; text-decoration: none; }
     letter-spacing: -.2px;
   }
 }
+
+
+/* Downloader results are hidden until a link is inspected.
+   The original landing-page layout remains unchanged before submission. */
+.download-results[hidden] { display: none !important; }
+.download-results {
+  margin: 12px 0 0;
+  padding: 18px 22px;
+  border: 1px solid #d5d5d5;
+  border-radius: 20px;
+  background: #fff;
+  color: #090909;
+  box-shadow: 0 8px 28px rgba(0,0,0,.06);
+}
+.download-result-heading { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.download-result-heading strong {
+  overflow-wrap: anywhere;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  line-height: 1.2;
+}
+.download-result-heading span { color: #666; font-size: 13px; }
+.download-result-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+.download-result-controls label { color: #555; font-size: 14px; }
+.download-result-controls select {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #b9b9b9;
+  border-radius: 24px;
+  background: #fff;
+  color: #111;
+  font: inherit;
+}
+.download-result-button {
+  flex: 0 0 190px;
+  height: 48px;
+  padding: 0 10px 0 20px;
+  font-size: 17px;
+  letter-spacing: -.3px;
+}
+.download-result-button .button-play { width: 30px; height: 30px; }
+.download-result-button .button-play svg { width: 19px; height: 19px; }
+.download-button:disabled { cursor: wait; opacity: .65; transform: none; }
+.form-feedback[data-state="error"] { color: #b3261e; }
+@media (max-width: 760px) {
+  .download-results { padding: 14px; border-radius: 16px; }
+  .download-result-controls { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .download-result-controls label { font-size: 12px; }
+  .download-result-controls select { width: 100%; }
+  .download-result-button { width: 100%; flex-basis: auto; }
+}

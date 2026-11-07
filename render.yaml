@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: memorableday-downloader-api
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./server/Dockerfile
+    dockerContext: ./server
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: MAX_FILE_SIZE_MB
+        value: "300"
+      - key: ALLOWED_ORIGINS
+        value: https://sandeepdolai.github.io,http://localhost:4321

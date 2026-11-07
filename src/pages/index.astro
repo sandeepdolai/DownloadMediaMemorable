@@ -53,7 +53,7 @@ const studioCardImage = `${assetBase}studio_card_full_master.jpg`;
         <span class="title-line title-line-two" aria-hidden="true">ANYTHING</span>
       </h1>
 
-      <form class="download-bar" id="download-form" autocomplete="off">
+      <form class="download-bar" id="download-form" autocomplete="off" data-api-base={import.meta.env.PUBLIC_DOWNLOADER_API_URL || "https://memorableday-downloader-api.onrender.com"}>
         <label class="visually-hidden" for="media-url">Media link</label>
         <input
           id="media-url"
@@ -76,6 +76,25 @@ const studioCardImage = `${assetBase}studio_card_full_master.jpg`;
       </form>
 
       <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+
+      <section class="download-results" id="download-results" aria-live="polite" hidden>
+        <div class="download-result-heading">
+          <strong id="download-result-title">Media ready</strong>
+          <span id="download-result-meta"></span>
+        </div>
+        <div class="download-result-controls">
+          <label for="download-format">Format</label>
+          <select id="download-format" name="format"></select>
+          <button class="download-button download-result-button" id="download-selected" type="button">
+            <span>Download</span>
+            <span class="button-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M8.4 5.9c-.55-.34-1.25.05-1.25.7v10.8c0 .65.7 1.04 1.25.7l8.7-5.4a.82.82 0 0 0 0-1.4l-8.7-5.4Z" fill="currentColor" />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </section>
     </main>
 
     <section class="feature-showcase" aria-label="4K video, MP3 audio, no watermark and instant save">
