@@ -18,6 +18,6 @@
     "undici": "^7.0.0"
   },
   "allowScripts": {
-    "ffmpeg-static@5.2.0": true
+    "ffmpeg-static": true
   }
 }

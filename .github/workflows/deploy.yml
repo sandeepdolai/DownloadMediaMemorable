@@ -31,6 +31,9 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
+      - name: Verify FFmpeg binary
+        run: node --input-type=module -e "import ffmpegPath from 'ffmpeg-static'; import { existsSync } from 'node:fs'; if (!ffmpegPath || !existsSync(ffmpegPath)) { console.error('FFmpeg binary is missing'); process.exit(1); } console.log('FFmpeg binary is ready');"
+
       - name: Check Vercel API syntax
         run: |
           node --check api/_lib/media.js
