@@ -241,12 +241,12 @@ a { color: inherit; text-decoration: none; }
 /* Unlimited downloads / Studio feature */
 .studio-feature {
   width: 100%;
-  padding: 108px 0 144px;
+  padding: 108px 0 0;
   background: #fff;
   color: #050505;
 }
 .studio-feature-inner {
-  width: min(860px, calc(100% - 48px));
+  width: min(1066px, calc(100% - 72px));
   margin: 0 auto;
 }
 .studio-feature-title {
@@ -263,9 +263,9 @@ a { color: inherit; text-decoration: none; }
 }
 .studio-feature-content {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: 42px;
+  gap: 48px;
   margin-top: 34px;
 }
 .studio-feature-art {
@@ -344,7 +344,7 @@ a { color: inherit; text-decoration: none; }
   flex: 0 0 auto;
 }
 @media (max-width: 760px) {
-  .studio-feature { padding: 72px 0 94px; }
+  .studio-feature { padding: 72px 0 0; }
   .studio-feature-inner { width: calc(100% - 36px); }
   .studio-feature-title {
     font-size: clamp(30px, 7.8vw, 39px);
@@ -383,11 +383,11 @@ a { color: inherit; text-decoration: none; }
 
 /* Three feature cards and footer from the reference layout */
 .studio-feature-cards {
-  width: min(535px, 100%);
-  margin: 64px auto 0;
+  width: min(1066px, calc(100% - 72px));
+  margin: clamp(54px, 5.2vw, 82px) auto 72px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 13px;
+  gap: 26px;
 }
 .studio-mini-card {
   position: relative;
@@ -475,15 +475,15 @@ a { color: inherit; text-decoration: none; }
 }
 .site-footer {
   width: 100%;
-  min-height: 66px;
-  padding: 13px 0;
+  min-height: 110px;
+  padding: 20px 0;
   display: flex;
   align-items: center;
   background: #030303;
   color: #fff;
 }
 .site-footer-inner {
-  width: min(860px, calc(100% - 48px));
+  width: min(1066px, calc(100% - 72px));
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -494,21 +494,21 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: 7px;
+  gap: 10px;
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 800;
   letter-spacing: -.65px;
   white-space: nowrap;
 }
-.footer-brand img { display: block; width: 27px; height: 27px; object-fit: contain; }
+.footer-brand img { display: block; width: 42px; height: 42px; object-fit: contain; }
 .footer-nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: clamp(18px, 2.4vw, 36px);
+  gap: clamp(24px, 3vw, 42px);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 400;
   color: rgba(255,255,255,.88);
   white-space: nowrap;
@@ -516,7 +516,11 @@ a { color: inherit; text-decoration: none; }
 .footer-nav a { transition: opacity 150ms ease; }
 .footer-nav a:hover { opacity: .65; }
 @media (max-width: 760px) {
-  .studio-feature-cards { width: 100%; margin-top: 42px; gap: 8px; }
+  .studio-feature-cards {
+    width: calc(100% - 36px);
+    margin: 46px auto 52px;
+    gap: 8px;
+  }
   .studio-mini-card { padding: 11px 9px; border-radius: 9px; aspect-ratio: .94 / 1; }
   .studio-mini-card h3 { font-size: clamp(10px, 2.75vw, 15px); letter-spacing: -.28px; line-height: 1.3; }
   .studio-card-arrow { width: 17px; height: 17px; }
@@ -527,9 +531,22 @@ a { color: inherit; text-decoration: none; }
   .quality-chip-grid { left: 7px; right: 6px; bottom: 9px; gap: 3px; font-size: clamp(6px, 1.75vw, 9px); letter-spacing: -.25px; }
   .quality-chip-grid span { min-height: 17px; padding: 3px 2px; }
   .no-watermark-art { left: 8px; bottom: 9px; width: clamp(28px, 8vw, 42px); height: clamp(28px, 8vw, 42px); }
-  .site-footer { padding: 16px 0; }
-  .site-footer-inner { width: calc(100% - 36px); flex-direction: column; align-items: flex-start; gap: 15px; }
-  .footer-brand { font-size: 17px; }
-  .footer-brand img { width: 26px; height: 26px; }
-  .footer-nav { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 10px 16px; font-size: 11px; }
+  .site-footer { min-height: 62px; padding: 12px 0; }
+  .site-footer-inner {
+    width: calc(100% - 28px);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .footer-brand { gap: 5px; font-size: clamp(11px, 3.15vw, 14px); letter-spacing: -.4px; }
+  .footer-brand img { width: clamp(18px, 5.4vw, 22px); height: clamp(18px, 5.4vw, 22px); }
+  .footer-nav {
+    width: auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: clamp(6px, 1.8vw, 10px);
+    font-size: clamp(7px, 2.15vw, 9px);
+    letter-spacing: -.2px;
+  }
 }
