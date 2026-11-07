@@ -54,11 +54,11 @@ try {
     name.endsWith('_0c0b2d8c_2K.png')
   );
   if (!uploadedHighQualityPng) {
-    throw new Error('The latest high-quality PNG upload could not be found.');
+    throw new Error('The uploaded high-resolution avatar artwork could not be found.');
   }
   const highQualityPng = await readFile(resolve(uploadedHighQualityPng));
-  await writeFile(resolve(outputDirectory, 'new-high-quality-upload.png'), highQualityPng);
-  console.log('Prepared public/assets/new-high-quality-upload.png');
+  await writeFile(resolve(outputDirectory, 'avatars_trio.png'), highQualityPng);
+  console.log('Prepared high-resolution public/assets/avatars_trio.png');
 } catch (error) {
   console.error('Unable to prepare the original MemorableDay assets.');
   console.error(error);
