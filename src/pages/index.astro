@@ -146,6 +146,58 @@ const studioCardImage = `${assetBase}studio_card_full_master.jpg`;
         </div>
       </div>
     </section>
+
+    <section class="studio-feature-cards" id="features" aria-label="Downloader features">
+      <article class="studio-mini-card">
+        <h3>One-Click<br />Paste</h3>
+        <svg class="studio-card-arrow studio-card-arrow-top" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M5 23 23 5M8 5h15v15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" />
+        </svg>
+        <div class="paste-link-pill">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9.8 14.2 8.1 15.9a3.5 3.5 0 0 1-5-5l4-4a3.5 3.5 0 0 1 5 0M14.2 9.8l1.7-1.7a3.5 3.5 0 0 1 5 5l-4 4a3.5 3.5 0 0 1-5 0M8.4 15.6l7.2-7.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Link</span>
+        </div>
+      </article>
+
+      <article class="studio-mini-card">
+        <h3>MP4 &amp; MP3<br />Quality Selector</h3>
+        <svg class="studio-card-arrow studio-card-arrow-top" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M5 23 23 5M8 5h15v15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" />
+        </svg>
+        <div class="quality-chip-grid" aria-label="Available quality options">
+          <span>4K HD</span>
+          <span class="quality-chip-selected">1080p</span>
+          <span>720p</span>
+          <span class="quality-chip-custom">Custom Resolution</span>
+          <span class="quality-chip-more">•••</span>
+        </div>
+      </article>
+
+      <article class="studio-mini-card studio-no-watermark-card">
+        <h3>No Watermarks<br />Ever</h3>
+        <img class="no-watermark-art" src={assetBase + "no_watermark_icon.png"} alt="" loading="lazy" decoding="async" />
+        <svg class="studio-card-arrow studio-card-arrow-bottom" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M5 5 23 23M8 23h15V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" />
+        </svg>
+      </article>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <a class="footer-brand" href="#home" aria-label="MemorableDay.in home">
+          <img src={brandLogo} alt="" />
+          <span>MemorableDay.in</span>
+        </a>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#privacy-policy">Privacy Policy</a>
+          <a href="#terms-of-service">Terms of Service</a>
+          <a href="#contact-us">Contact Us</a>
+        </nav>
+      </div>
+    </footer>
+
     <script>
       import '../scripts/download.js';
     </script>

@@ -21,6 +21,7 @@ const assets = [
   'flat_pinterest.png',
   'avatars_trio.png',
   'studio_card_full.png',
+  'no_watermark_icon.png',
 ];
 
 try {
