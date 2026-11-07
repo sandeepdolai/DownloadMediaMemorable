@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "astro": "7.4.0",
-    "fflate": "0.8.2"
+    "fflate": "0.8.2",
+    "ffmpeg-static": "5.2.0",
+    "ipaddr.js": "^2.2.0",
+    "undici": "^7.0.0"
   }
 }
