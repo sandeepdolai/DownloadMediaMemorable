@@ -170,3 +170,72 @@ a { color: inherit; text-decoration: none; }
     margin-top: 84px;
   }
 }
+
+
+/* Supported platforms and community trust */
+.platform-trust { width: 100%; padding: 108px 0 168px; background: #fff; color: #050505; }
+.platform-trust-inner {
+  width: min(1368px, calc(100% - 17vw)); margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0,1.06fr) minmax(0,1fr);
+  column-gap: 64px; row-gap: 62px; align-items: center;
+}
+.platform-trust-title {
+  margin: 0; font-family: var(--font-body); font-size: clamp(34px,3.35vw,52px);
+  line-height: 1.12; font-weight: 400; letter-spacing: -1.8px;
+}
+.platform-stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; align-items: start; }
+.platform-stat { min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; white-space: nowrap; }
+.platform-stat strong {
+  font-family: var(--font-display); font-size: clamp(42px,4.05vw,66px);
+  font-weight: 800; line-height: .98; letter-spacing: -2.8px;
+}
+.platform-stat span {
+  margin-top: 18px; font-family: var(--font-body); font-size: clamp(17px,1.55vw,25px);
+  line-height: 1.15; font-weight: 600; letter-spacing: -.6px;
+}
+.platform-list { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: clamp(14px,2vw,30px); align-items: start; }
+.platform-item {
+  display: flex; min-width: 0; flex-direction: column; align-items: center; gap: 15px;
+  font-family: var(--font-body); font-size: clamp(15px,1.3vw,21px);
+  font-weight: 400; letter-spacing: -.35px; white-space: nowrap;
+}
+.platform-icon { display: block; width: clamp(54px,5.45vw,90px); height: clamp(54px,5.45vw,90px); overflow: visible; }
+.youtube-icon { height: clamp(48px,4.95vw,82px); margin: 3px 0 7px; }
+.platform-proof { display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 34px; }
+.avatar-stack { flex: 0 0 auto; display: flex; align-items: center; padding-left: 2px; }
+.trust-avatar { display: block; width: clamp(68px,6vw,100px); height: clamp(68px,6vw,100px); border-radius: 50%; margin-left: -12px; }
+.trust-avatar:first-child { margin-left: 0; }
+.platform-proof-copy { flex: 1 1 auto; min-width: 0; max-width: 360px; }
+.platform-proof-copy h3 {
+  margin: 0; font-family: var(--font-heading); font-size: clamp(23px,2.35vw,39px);
+  line-height: 1.22; font-weight: 800; letter-spacing: -1.05px;
+}
+.platform-proof-copy p {
+  margin: 26px 0 0; font-family: var(--font-body); font-size: clamp(17px,1.6vw,25px);
+  line-height: 1.35; font-weight: 400; letter-spacing: -.45px;
+}
+@media (max-width:1050px) {
+  .platform-trust-inner { width: calc(100% - 72px); column-gap: 34px; }
+  .platform-proof { gap: 22px; }
+  .trust-avatar { width: 68px; height: 68px; margin-left: -17px; }
+  .platform-proof-copy h3 { font-size: 26px; }
+  .platform-proof-copy p { margin-top: 16px; font-size: 17px; }
+}
+@media (max-width:760px) {
+  .platform-trust { padding: 56px 0 92px; }
+  .platform-trust-inner { width: calc(100% - 36px); grid-template-columns: minmax(0,1fr); row-gap: 34px; }
+  .platform-trust-title { font-size: clamp(28px,7vw,40px); letter-spacing: -1.1px; }
+  .platform-stats { gap: 8px; }
+  .platform-stat strong { font-size: clamp(30px,8.1vw,42px); letter-spacing: -1.7px; }
+  .platform-stat span { margin-top: 9px; font-size: clamp(12px,3.25vw,16px); letter-spacing: -.3px; }
+  .platform-list { gap: 6px; }
+  .platform-item { gap: 8px; font-size: clamp(10px,2.8vw,13px); letter-spacing: -.2px; }
+  .platform-icon { width: clamp(44px,12vw,66px); height: clamp(44px,12vw,66px); }
+  .youtube-icon { width: clamp(48px,13vw,70px); height: clamp(39px,10.5vw,58px); margin: 4px 0 7px; }
+  .platform-proof { justify-content: flex-start; gap: 18px; }
+  .trust-avatar { width: clamp(48px,13vw,64px); height: clamp(48px,13vw,64px); margin-left: -15px; }
+  .trust-avatar:first-child { margin-left: 0; }
+  .platform-proof-copy h3 { font-size: clamp(19px,5vw,26px); letter-spacing: -.7px; }
+  .platform-proof-copy p { margin-top: 10px; font-size: clamp(14px,3.7vw,17px); }
+  .desktop-break { display: none; }
+}

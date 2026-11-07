@@ -19,7 +19,6 @@ const assets = [
 try {
   const archive = new Uint8Array(await readFile(archivePath));
   const extracted = unzipSync(archive);
-  console.log('ASSET_ARCHIVE_ENTRIES', Object.keys(extracted).map((name) => `${name} (${extracted[name]?.byteLength ?? 0})`).join('\\n'));
   await mkdir(outputDirectory, { recursive: true });
 
   for (const filename of assets) {
