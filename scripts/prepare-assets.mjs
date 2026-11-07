@@ -1,4 +1,4 @@
-import { readFile, mkdir, writeFile, readdir } from 'node:fs/promises';
+import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { unzipSync } from 'fflate';
 
@@ -48,17 +48,27 @@ try {
   await writeFile(resolve(outputDirectory, 'studio_card_full_master.jpg'), studioMaster);
   console.log('Prepared public/assets/studio_card_full_master.jpg');
 
-  const rootImages = await readdir(resolve('.'));
-  const uploadedHighQualityPng = rootImages.find((name) =>
-    name.startsWith('Remove_background_and_preserve_s') &&
-    name.endsWith('_0c0b2d8c_2K.png')
+
+
+  const avatarParts = await Promise.all(
+    Array.from({ length: 7 }, (_, index) =>
+      readFile(resolve('scripts/avatar-payload', `part-${index}.txt`), 'utf8')
+    )
   );
-  if (!uploadedHighQualityPng) {
-    throw new Error('The uploaded high-resolution avatar artwork could not be found.');
+  const avatarBase64 = avatarParts.join('');
+  if (avatarBase64.length !== 50128) {
+    throw new Error(`Incomplete chat-uploaded avatar data: ${avatarBase64.length} base64 characters.`);
   }
-  const highQualityPng = await readFile(resolve(uploadedHighQualityPng));
-  await writeFile(resolve(outputDirectory, 'avatars_trio.png'), highQualityPng);
-  console.log('Prepared high-resolution public/assets/avatars_trio.png');
+  const avatarBytes = Buffer.from(avatarBase64, 'base64');
+  if (
+    avatarBytes.length !== 37596 ||
+    avatarBytes.subarray(0, 4).toString() !== 'RIFF' ||
+    avatarBytes.subarray(8, 12).toString() !== 'WEBP'
+  ) {
+    throw new Error('Chat-uploaded avatar image failed binary validation.');
+  }
+  await writeFile(resolve(outputDirectory, 'avatars-trio-chat-upload.webp'), avatarBytes);
+  console.log('Prepared the chat-uploaded 512 × 205 avatar artwork.');
 } catch (error) {
   console.error('Unable to prepare the original MemorableDay assets.');
   console.error(error);
