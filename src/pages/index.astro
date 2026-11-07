@@ -6,12 +6,7 @@ const assetBase = `${basePath}/assets/`;
 const brandLogo = `${assetBase}logo_m.png`;
 const playOrb = `${assetBase}o_play.png`;
 const globeOrb = `${assetBase}o_globe.png`;
-const heroSculpture = `${assetBase}hero_sculpture.png`;
-const youtubeIcon = `${assetBase}3d_youtube.png`;
-const instagramIcon = `${assetBase}3d_instagram.png`;
-const facebookIcon = `${assetBase}3d_facebook.png`;
-const tiktokIcon = `${assetBase}3d_tiktok.png`;
-const pinterestIcon = `${assetBase}3d_pinterest.png`;
+const showcaseImage = `${assetBase}showcase-composition.png`;
 ---
 <!doctype html>
 <html lang="en">
@@ -85,28 +80,13 @@ const pinterestIcon = `${assetBase}3d_pinterest.png`;
     <section class="feature-showcase" aria-label="4K video, MP3 audio, no watermark and instant save">
       <div class="showcase-backdrop" aria-hidden="true"></div>
 
-      <div class="showcase-ribbons" aria-hidden="true">
-        <div class="showcase-ribbon ribbon-upper">
-          <span class="ribbon-segment ribbon-cyan"><span>4K VIDEO</span></span>
-          <span class="ribbon-segment ribbon-magenta"><span>MP3 AUDIO</span></span>
-          <span class="ribbon-segment ribbon-indigo"></span>
-          <span class="ribbon-segment ribbon-yellow"><span>NO WATERMARK</span></span>
-        </div>
-        <div class="showcase-ribbon ribbon-lower">
-          <span class="ribbon-segment ribbon-blue"></span>
-          <span class="ribbon-segment ribbon-yellow"></span>
-          <span class="ribbon-segment ribbon-blue"><span>INSTANT SAVE</span></span>
-        </div>
-      </div>
-
-      <div class="showcase-composition" aria-hidden="true">
-        <img class="composition-art composition-sculpture" src={heroSculpture} alt="" decoding="async" />
-        <img class="composition-art composition-youtube" src={youtubeIcon} alt="" decoding="async" />
-        <img class="composition-art composition-facebook" src={facebookIcon} alt="" decoding="async" />
-        <img class="composition-art composition-instagram" src={instagramIcon} alt="" decoding="async" />
-        <img class="composition-art composition-tiktok" src={tiktokIcon} alt="" decoding="async" />
-        <img class="composition-art composition-pinterest" src={pinterestIcon} alt="" decoding="async" />
-      </div>
+      <img
+        class="showcase-image"
+        src={showcaseImage}
+        alt=""
+        decoding="async"
+        fetchpriority="high"
+      />
     </section>
 
     <script>

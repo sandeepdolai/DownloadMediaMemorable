@@ -124,130 +124,27 @@ a { color: inherit; text-decoration: none; }
   .download-button { flex-basis: 132px; }
 }
 
-/* Editorial feature banner — composed from the original transparent archive cutouts. */
+/* Single pre-composed banner artwork uploaded by the user. */
 .feature-showcase {
   position: relative;
   isolation: isolate;
   width: 100%;
-  height: 290px;
   margin: 100px auto 0;
-}
-.showcase-backdrop {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
   overflow: hidden;
   background: #020202;
 }
-.showcase-ribbons {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.showcase-ribbon {
-  position: absolute;
-  left: -10%;
-  display: flex;
-  width: 120%;
-  height: 58px;
-  transform: rotate(-8deg);
-  transform-origin: center;
-  align-items: stretch;
-  color: #050505;
-  font-family: var(--font-display);
-  font-size: clamp(20px, 3.1vw, 31px);
-  font-weight: 900;
-  letter-spacing: -.045em;
-  line-height: 1;
-  white-space: nowrap;
-}
-.ribbon-upper { top: 94px; }
-.ribbon-lower { top: 188px; }
-.ribbon-segment {
-  display: flex;
-  min-width: 0;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-}
-.ribbon-segment > span { display: block; padding: 0 8px; }
-.ribbon-cyan { width: 26%; background: #0cf2ff; }
-.ribbon-magenta { width: 21%; background: #ff47e2; }
-.ribbon-indigo { width: 18%; background: #2b4eff; }
-.ribbon-yellow { width: 35%; background: #e2ff1a; }
-.ribbon-blue { background: #3458f4; }
-.ribbon-lower .ribbon-blue:first-child { width: 30%; }
-.ribbon-lower .ribbon-yellow { width: 38.3%; }
-.ribbon-lower .ribbon-blue:last-child { width: 31.7%; }
-/* Artwork aligned to the exact transparent-canvas proportions supplied by the user. */
-.showcase-composition {
-  position: absolute;
-  z-index: 4;
-  /* Keep the artwork anchored to the banner, not to the viewport. */
-  top: 50%;
-  left: 50%;
-  width: min(65vw, 700px);
-  aspect-ratio: 2048 / 1529;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-.composition-art {
-  position: absolute;
+
+.showcase-image {
   display: block;
+  width: 100%;
   height: auto;
+  max-width: none;
   object-fit: contain;
   user-select: none;
-  pointer-events: none;
-}
-.composition-sculpture {
-  z-index: 4;
-  left: 20.5%;
-  top: 0.6%;
-  width: 60%;
-}
-.composition-youtube {
-  z-index: 5;
-  left: 27.1%;
-  top: 4.8%;
-  width: 12.2%;
-}
-.composition-facebook {
-  z-index: 5;
-  left: 69.1%;
-  top: 5%;
-  width: 14.7%;
-}
-.composition-instagram {
-  z-index: 5;
-  left: 14.9%;
-  top: 26.7%;
-  width: 14.7%;
-}
-.composition-tiktok {
-  z-index: 6;
-  left: 20.2%;
-  top: 55.3%;
-  width: 14.6%;
-}
-.composition-pinterest {
-  z-index: 5;
-  left: 69.1%;
-  top: 50.9%;
-  width: 15%;
 }
 
 @media (max-width: 760px) {
   .feature-showcase {
-    height: 235px;
     margin-top: 84px;
   }
-  .showcase-ribbon {
-    height: 42px;
-    font-size: clamp(13px, 3.8vw, 20px);
-    letter-spacing: -.04em;
-  }
-  .ribbon-upper { top: 73px; }
-  .ribbon-lower { top: 151px; }
 }
