@@ -185,11 +185,12 @@ a { color: inherit; text-decoration: none; }
 .showcase-composition {
   position: absolute;
   z-index: 4;
-  top: clamp(-100px, -9.5vw, -62px);
+  /* Keep the artwork anchored to the banner, not to the viewport. */
+  top: 50%;
   left: 50%;
   width: min(65vw, 700px);
   aspect-ratio: 2048 / 1529;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
 .composition-art {
@@ -249,9 +250,4 @@ a { color: inherit; text-decoration: none; }
   }
   .ribbon-upper { top: 73px; }
   .ribbon-lower { top: 151px; }
-  .showcase-composition {
-    top: -9.5vw;
-    width: 65vw;
-    max-width: 520px;
-  }
 }
