@@ -25,7 +25,6 @@ const assets = [
 try {
   const archive = new Uint8Array(await readFile(archivePath));
   const extracted = unzipSync(archive);
-  console.log('FONT_GUIDE_START\\n' + new TextDecoder().decode(extracted['FONTS.md']) + '\\nFONT_GUIDE_END');
   await mkdir(outputDirectory, { recursive: true });
 
   for (const filename of assets) {
