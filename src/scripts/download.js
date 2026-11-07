@@ -93,7 +93,7 @@ if (
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),
-        signal: AbortSignal.timeout(25000)
+        signal: AbortSignal.timeout(90000)
       });
       const result = await readApiResponse(response);
       if (!Array.isArray(result.formats) || result.formats.length === 0) {

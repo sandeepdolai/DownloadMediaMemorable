@@ -36,6 +36,9 @@ jobs:
       - name: Check downloader API syntax
         run: node --check server/src/server.js
 
+      - name: Build downloader API container
+        run: docker build -t memorableday-downloader-api:ci ./server
+
       - name: Build Astro site
         env:
           PUBLIC_DOWNLOADER_API_URL: ${{ vars.PUBLIC_DOWNLOADER_API_URL }}
