@@ -1,60 +1,70 @@
 # MemorableDay.in
 
-Astro rebuild of the MemorableDay.in media-downloader landing page, using the original visual assets supplied in `memorableday_assets.zip`.
+Astro website for MemorableDay.in, preserving the existing landing-page design and assets.
 
-## Requirements
+## Website
 
-- Node.js 24 or newer
-- npm
+- Framework: Astro
+- Hosting: Vercel
+- Build: npm install && npm run build
+- Local development: npm run dev
 
-## Local development
+The downloader form keeps the existing UI and connects to the separate API at:
 
-```sh
-npm install
-npm run dev
-```
+https://memorableday-downloader-api.onrender.com
 
-The `predev` script extracts the original transparent PNG assets from the ZIP into `public/assets/`.
+You can override the API URL at build time with the PUBLIC_DOWNLOADER_API_URL environment variable.
 
-## Production build
+## Multi-site downloader API
 
-```sh
-npm run build
-npm run preview
-```
+The separate Python service lives in the server/ directory and uses:
 
-The page is built as a static Astro site in `dist/`. The feature banner is composed from the original liquid sculpture and 3D social-platform PNG cutouts; the diagonal feature ribbons are styled in CSS.
+- FastAPI for the HTTP API.
+- yt-dlp as the extraction engine for websites that its current extractors support.
+- FFmpeg for merging separate audio/video streams and converting audio to MP3.
+- Deno plus yt-dlp-ejs for the current YouTube JavaScript challenge integration.
+- Temporary local files with automatic cleanup after the browser receives the download.
 
-## Deployment
+### API endpoints
 
-The `Deploy MemorableDay.in (Astro)` GitHub Actions workflow builds and deploys `dist/` to GitHub Pages whenever `main` changes.
+- GET /health — service health and extraction-engine version.
+- POST /v1/inspect — accepts JSON {"url":"https://..."}, returns media title and available formats.
+- POST /v1/download — accepts form fields url and format, then streams the resulting file to the browser.
 
-Live site: https://sandeepdolai.github.io/Downloadmedia/
+### Format IDs
 
+- best — best available video and audio combination.
+- p1080, p720, etc. — video at or below the selected resolution when available.
+- audio — original audio.
+- mp3 — audio converted to MP3 at 192 kbps.
 
-## Downloader API (new)
+The API only accepts public HTTP/HTTPS URLs, rejects local/private IP destinations at the submitted URL, disables playlist downloads, does not load browser cookies, and does not attempt DRM or authentication bypasses. It applies request limits, a download-size limit and a processing-time limit. The service should be deployed in an isolated environment with restricted network egress before accepting untrusted public traffic; an initial URL check alone cannot fully control every secondary URL requested by third-party extractors.
 
-The Astro site remains on GitHub Pages. The media-processing API is a separate Docker service in the server folder, deployable with the root Render Blueprint file.
+### Build and test the API locally
 
-### First backend scope
+~~~sh
+cd server
+python -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
+python -m unittest -v test_app
+uvicorn app:app --host 0.0.0.0 --port 10000
+~~~
 
-- Public HTTPS URLs that point directly to media files (MP4, WebM, MOV, MP3, M4A, WAV, OGG, FLAC and similar).
-- Inspects file type, size and filename before offering format choices.
-- Streams the original file to the browser without storing it on the server.
-- Converts supported audio/video inputs to MP3 with FFmpeg.
-- Rejects webpage URLs, private/login-only media, unsupported file types, private-network destinations, oversized files and unsafe redirects.
+FFmpeg and Deno must be installed for the full extraction/conversion feature set. The Dockerfile installs both automatically.
 
-This is an initial working downloader engine, not a claim of full compatibility with every social platform. Platform-page extraction must be added only through authorized platform integrations or creator-authorized media sources. YouTube developer policies prohibit downloading/offline copies of YouTube audiovisual content without prior written approval; Meta and TikTok also restrict automated collection without permission.
+### Deploy the API on Render
 
-### Deploy the API
+1. Open the Render Dashboard and choose New → Blueprint.
+2. Connect the sandeepdolai/Downloadmedia repository and select the main branch.
+3. Render reads render.yaml and builds the Docker service.
+4. Wait for GET /health to return {"ok":true,...}.
+5. The Vercel frontend uses the service URL https://memorableday-downloader-api.onrender.com. If Render gives the service a different hostname, set Vercel's PUBLIC_DOWNLOADER_API_URL environment variable to that exact URL and redeploy the website.
 
-1. Open Render and choose New → Blueprint.
-2. Connect this repository and select the main branch. Render reads render.yaml and creates the API service.
-3. The health endpoint is /health. The default service URL is configured in the Astro form. If Render assigns a different hostname, set the GitHub repository Actions variable PUBLIC_DOWNLOADER_API_URL to that URL, then rerun the Pages workflow.
-4. The initial Blueprint uses Render's free plan for testing. Render documents that free web services have limitations and are not recommended for production. Upgrade the API service before public/high-volume use.
+The Blueprint currently uses Render's Free plan for initial testing. Render states free web services spin down after inactivity and are not suitable for production. Use a paid instance for reliable downloads, and increase CPU/RAM only after measuring real usage.
 
-### Local API development
+## Compatibility and operating limits
 
-Run npm install and npm start inside the server folder. FFmpeg must be installed on the machine. The API listens on PORT (default 10000). Set PUBLIC_DOWNLOADER_API_URL to http://localhost:10000 when building the Astro frontend locally.
+yt-dlp supports a large and changing list of websites, not literally every website. An extractor can stop working when a source website changes. Links that require login, private access, paid access or DRM are not supported by this service. Downloads must be authorized by the content owner and permitted by the source platform's terms.
 
-The API does not store downloaded media. It streams source media to the visitor and applies URL/DNS checks to reduce server-side request forgery risk.
+This first multi-site version runs extraction synchronously with bounded in-process concurrency. A Redis-backed job queue, multiple worker instances, object storage and progress polling are future scaling work; they are not configured in this initial deployment.
