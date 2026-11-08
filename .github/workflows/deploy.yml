@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: validate-memorableday-\${{ github.ref }}
+  group: validate-memorableday-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
