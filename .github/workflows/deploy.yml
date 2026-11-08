@@ -28,19 +28,35 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install dependencies
+      - name: Install website dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Verify FFmpeg binary
+      - name: Verify FFmpeg binary for legacy direct-media endpoint
         run: node --input-type=module -e "import ffmpegPath from 'ffmpeg-static'; import { existsSync } from 'node:fs'; if (!ffmpegPath || !existsSync(ffmpegPath)) { console.error('FFmpeg binary is missing'); process.exit(1); } console.log('FFmpeg binary is ready');"
 
-      - name: Check Vercel API syntax
+      - name: Check existing Vercel API syntax
         run: |
           node --check api/_lib/media.js
           node --check api/v1/inspect.js
           node --check api/v1/download.js
 
-      - name: Build Astro for Vercel
+      - name: Build multi-site downloader container
+        run: docker build --tag memorableday-downloader-api:ci ./server
+
+      - name: Smoke test downloader API container
+        run: |
+          docker run -d --name memorableday-api-ci -p 10000:10000 memorableday-downloader-api:ci
+          trap 'docker logs memorableday-api-ci || true; docker rm -f memorableday-api-ci || true' EXIT
+          for attempt in $(seq 1 25); do
+            if curl --fail --silent http://127.0.0.1:10000/health; then
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Downloader API did not become healthy"
+          exit 1
+
+      - name: Build Astro website for Vercel
         env:
           VERCEL: "1"
         run: npm run build
