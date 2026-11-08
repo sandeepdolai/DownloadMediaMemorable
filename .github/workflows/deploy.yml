@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: validate-memorableday-${{ github.ref }}
+  group: validate-memorableday-\${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -28,19 +28,22 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install dependencies
+      - name: Install website dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Verify FFmpeg binary
+      - name: Verify FFmpeg binary for legacy direct-media endpoint
         run: node --input-type=module -e "import ffmpegPath from 'ffmpeg-static'; import { existsSync } from 'node:fs'; if (!ffmpegPath || !existsSync(ffmpegPath)) { console.error('FFmpeg binary is missing'); process.exit(1); } console.log('FFmpeg binary is ready');"
 
-      - name: Check Vercel API syntax
+      - name: Check existing Vercel API syntax
         run: |
           node --check api/_lib/media.js
           node --check api/v1/inspect.js
           node --check api/v1/download.js
 
-      - name: Build Astro for Vercel
+      - name: Build multi-site downloader container
+        run: docker build --tag memorableday-downloader-api:ci ./server
+
+      - name: Build Astro website for Vercel
         env:
           VERCEL: "1"
         run: npm run build
