@@ -30,4 +30,4 @@ USER appuser
 ENV PORT=10000
 EXPOSE 10000
 
-CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port \${PORT:-10000} --proxy-headers --forwarded-allow-ips='*'"]
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port \"$PORT\" --proxy-headers --forwarded-allow-ips='*'"]
